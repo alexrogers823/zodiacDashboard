@@ -1,4 +1,5 @@
 const zodiacMain = document.querySelector('[data-current-sign]');
+const zodiacElement = document.querySelector('[data-image]')
 const zodiacDates = document.querySelector('[data-dates]');
 const leftButton = document.querySelector('[data-prev]');
 const rightButton = document.querySelector('[data-next]');
@@ -10,19 +11,62 @@ const trueLoveQuestion = document.querySelector('[data-lover-question]');
 const trueLoveResponse = document.querySelector('[data-lover-answer]');
 const footer = document.querySelector('[data-footer]');
 
+const elements = {
+  "Water": "./images/water-symbol.jpg",
+  "Earth": "./images/earth-symbol.png",
+  "Fire": "./images/fire-symbol.jpg",
+  "Air": "./images/air-symbol.png"
+}
+
 const signs = [
-  "Aries",
-  "Taurus",
-  "Gemini",
-  "Cancer",
-  "Leo",
-  "Virgo",
-  "Libra",
-  "Scorpio",
-  "Sagittarius",
-  "Capricorn",
-  "Aquarius",
-  "Pisces"
+  {
+    name: "Aries",
+    image: ""
+  },
+  {
+    name: "Taurus",
+    image: ""
+  },
+  {
+    name: "Gemini",
+    image: ""
+  },
+  {
+    name: "Cancer",
+    image: ""
+  },
+  {
+    name: "Leo",
+    image: ""
+  },
+  {
+    name: "Virgo",
+    image: ""
+  },
+  {
+    name: "Libra",
+    image: ""
+  },
+  {
+    name: "Scorpio",
+    image: ""
+  },
+  {
+    name: "Sagittarius",
+    image: ""
+  },
+  {
+    name: "Capricorn",
+    image: ""
+  },
+  {
+    name: "Aquarius",
+    image: ""
+  },
+  {
+    name: "Pisces",
+    image: ""
+  }
 ]
 const data = [];
 let index = 0;
@@ -40,6 +84,7 @@ fetch('http://my-little-cors-proxy.herokuapp.com/https://zodiacal.herokuapp.com/
 function updateStaticText() {
   const zodiac = data[index];
   zodiacMain.textContent = zodiac.name;
+  zodiacElement.setAttribute("src", elements[zodiac.element]);
   zodiacDates.textContent = `${zodiac.sun_dates[0]} - ${zodiac.sun_dates[1]}`;
   leftButton.textContent = (index === 0) ? `< ${data[data.length-1].name}` : `< ${data[index-1].name}`;
   rightButton.textContent = (index === data.length-1) ? `${data[0].name} >` : `${data[index+1].name} >`;
@@ -96,6 +141,6 @@ rightButton.addEventListener("click", () => {
 
 // forEach will create all twelve buttons in footer, with event listeners
 signs.forEach(sign => {
-  const newButton = generateButton(sign);
+  const newButton = generateButton(sign.name);
   newButton.addEventListener("click", () => jumpToSign(sign));
 });

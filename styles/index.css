@@ -13,18 +13,150 @@ html, body {
   width: 100%;
 }
 
+body {
+  background-image: url('../images/astronomy-black-wallpaper-constellation-2150.jpg');
+}
+
+.heading, .main-section, .big-buttons, .footer {
+  margin: 20px 0;
+}
+
 .heading {
-  background-color: red;
+  /* background-color: red; */
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.title * {
+  margin: 5px;
+}
+
+.title img {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.the-sign {
+  color: white;
+  text-shadow: 2px 2px 2px darkblue;
+}
+
+.sign-dates {
+  background-color: darkblue;
+  color: white;
+  font-size: 10px;
+  width: 20%;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px white,
+              4px 4px 4px darkblue;
+}
+
+.element {
+  width: 50px;
+  height: 50px;
 }
 
 .main-section {
-  background-color: green;
+  display: block;
+  /* background-color: green; */
+}
+
+.trait-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10px;
+  text-align: center;
+  /* border-bottom: 1px dashed blue; */
+}
+
+
+.lovetta, .harry {
+  width: 30%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.lovetta {
+  background-color: rgba(255, 192, 203, 0.75);
+}
+
+.harry {
+  order: 1;
+  background-color: rgba(160, 82, 45, 0.75);
+}
+
+.celebrity-club {
+  background-color: #FFDF00;
+  width: 15%;
+  border-radius: 20px;
+  font-size: 8px;
+}
+
+.celebrity {
+  font-weight: bold;
+}
+
+.true-love {
+  width: 40%;
+  margin: 5px auto 0 auto;
+  padding: 5px;
+  font-size: 8px;
+  border-radius: 15px;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  text-align: justify;
+  background-color: rgba(34, 139, 34, 0.7);
+  box-shadow: 2px 2px 2px white;
+}
+
+.critic-response {
+  /* font-weight: bold; */
+  color: #00BFFF;
 }
 
 .big-buttons {
-  background-color: orange;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: orange; */
+}
+
+.big-buttons button {
+  width: 20%;
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px white;
 }
 
 .footer {
-  background-color: dodgerblue;
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background-color: dodgerblue; */
+}
+
+.all-signs {
+  width: 15%;
+  margin: 5px 0;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-color: gold;
+  border-radius: 10px;
+}
+
+.all-signs:hover {
+  background-color: white;
+  color: royalblue;
 }
