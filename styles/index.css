@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.heading {
+  background-color: red;
+}
+
+.main-section {
+  background-color: green;
+}
+
+.big-buttons {
+  background-color: orange;
+}
+
+.footer {
+  background-color: dodgerblue;
+}
