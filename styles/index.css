@@ -77,6 +77,10 @@ body {
   /* border-bottom: 1px dashed blue; */
 }
 
+.trait-container > * {
+  box-shadow: 2px 2px 2px white;
+}
+
 
 .lovetta, .harry {
   width: 30%;

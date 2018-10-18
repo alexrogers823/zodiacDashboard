@@ -69,15 +69,34 @@ const signs = [
   }
 ]
 const data = [];
+const cachedData = JSON.parse(localStorage.getItem("zodiac"));
 let index = 0;
 
 fetch('http://my-little-cors-proxy.herokuapp.com/https://zodiacal.herokuapp.com/api')
-    .then(blob => blob.json())
-    .then(j => data.push(...j))
+    .then(blob => blob.json() || cachedData)
+    .then(value => setCachedData(value))
+    // .then(j => data.push(...j))
     .then(() => {
       updateStaticText(index);
       updateRandomText();
-    });
+    })
+    .catch(err => {
+      console.log("Promise chain failed");
+      console.log(err);
+      data.push(...cachedData);
+    })
+
+// Stores returned object into local storage on browser
+function setCachedData(value) {
+  localStorage.setItem("zodiac", JSON.stringify(value));
+  const alternative = JSON.parse(localStorage.getItem("zodiac"));
+  return data.push(...value) || alternative;
+}
+
+// Uses either live data or cached data for main app
+function useData(value) {
+
+}
 
 
 // Sets text for current zodiac sign, not changed by setInterval
